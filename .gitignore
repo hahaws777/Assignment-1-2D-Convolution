@@ -1,0 +1,7 @@
+# Downloaded by setup.sh / download_zrr_samples.py; excluded from submission
+checkpoints/
+data/
+.quality_cache/
+__pycache__/
+*.pyc
+*.part

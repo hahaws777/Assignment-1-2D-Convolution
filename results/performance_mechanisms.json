@@ -1,0 +1,58 @@
+{
+  "scope": "One warmed invocation per path; diagnostic launch structure only, not a latency benchmark.",
+  "precision": "FP32; TF32 disabled; cuDNN autotuning enabled",
+  "cases": [
+    {
+      "method": "cudnn",
+      "input_size": 32,
+      "kernel_count": 2,
+      "kernel_names": [
+        "void implicit_convolve_sgemm<float, float, 128, 6, 7, 3, 3, 5, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)",
+        "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})"
+      ],
+      "cpu_operators": [
+        "aten::conv2d",
+        "aten::convolution",
+        "aten::_convolution",
+        "aten::cudnn_convolution",
+        "aten::reshape",
+        "aten::view",
+        "aten::add_"
+      ]
+    },
+    {
+      "method": "implicit",
+      "input_size": 32,
+      "kernel_count": 1,
+      "kernel_names": [
+        "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+      ],
+      "cpu_operators": [
+        "aten::empty"
+      ]
+    },
+    {
+      "method": "implicit",
+      "input_size": 320,
+      "kernel_count": 1,
+      "kernel_names": [
+        "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+      ],
+      "cpu_operators": [
+        "aten::empty"
+      ]
+    },
+    {
+      "method": "im2col_reg",
+      "input_size": 320,
+      "kernel_count": 2,
+      "kernel_names": [
+        "im2col_kernel(ConvDims, float const*, int, int, float*)",
+        "void gemm_reg<64, 64, 8, 4, 4>(int, int, int, float const*, float const*, ConvEpilogue)"
+      ],
+      "cpu_operators": [
+        "aten::empty"
+      ]
+    }
+  ]
+}

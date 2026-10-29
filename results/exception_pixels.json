@@ -1,0 +1,439 @@
+{
+  "test_image_id": 747,
+  "shape": [
+    448,
+    448,
+    3
+  ],
+  "comparison": "Final floating-point RGB after output_l0 Sigmoid, against cuDNN",
+  "coordinates": "zero-based (x,y) = (column,row); top-left origin",
+  "tolerance": {
+    "atol": 2e-05,
+    "rtol": 0.0001
+  },
+  "methods": {
+    "naive": {
+      "max_abs": 6.943941116333008e-05,
+      "violating_channel_values": 14,
+      "violating_pixels": 7,
+      "values": [
+        {
+          "x": 304,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.2695089876651764,
+          "custom": 0.26956087350845337,
+          "absolute_error": 5.188584327697754e-05,
+          "tolerance": 4.6950895921327174e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.26775363087654114,
+          "custom": 0.26782307028770447,
+          "absolute_error": 6.943941116333008e-05,
+          "tolerance": 4.6775363443885e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.23954448103904724,
+          "custom": 0.23961098492145538,
+          "absolute_error": 6.650388240814209e-05,
+          "tolerance": 4.395444557303563e-05
+        },
+        {
+          "x": 305,
+          "y": 445,
+          "channel": "R",
+          "reference": 0.21146711707115173,
+          "custom": 0.2115119993686676,
+          "absolute_error": 4.488229751586914e-05,
+          "tolerance": 4.114671173738316e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "R",
+          "reference": 0.2047518938779831,
+          "custom": 0.20480768382549286,
+          "absolute_error": 5.5789947509765625e-05,
+          "tolerance": 4.047518814331852e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.23521946370601654,
+          "custom": 0.23528456687927246,
+          "absolute_error": 6.510317325592041e-05,
+          "tolerance": 4.352194446255453e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.21060794591903687,
+          "custom": 0.21067330241203308,
+          "absolute_error": 6.535649299621582e-05,
+          "tolerance": 4.106079359189607e-05
+        },
+        {
+          "x": 307,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.15481036901474,
+          "custom": 0.15484659373760223,
+          "absolute_error": 3.622472286224365e-05,
+          "tolerance": 3.548103632056154e-05
+        },
+        {
+          "x": 305,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.16998784244060516,
+          "custom": 0.17003609240055084,
+          "absolute_error": 4.824995994567871e-05,
+          "tolerance": 3.699878288898617e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.17276126146316528,
+          "custom": 0.17281712591648102,
+          "absolute_error": 5.586445331573486e-05,
+          "tolerance": 3.7276127841323614e-05
+        },
+        {
+          "x": 307,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.14859510958194733,
+          "custom": 0.1486300528049469,
+          "absolute_error": 3.4943222999572754e-05,
+          "tolerance": 3.4859509469242766e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "B",
+          "reference": 0.1725662648677826,
+          "custom": 0.17261026799678802,
+          "absolute_error": 4.400312900543213e-05,
+          "tolerance": 3.7256624636938795e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "B",
+          "reference": 0.1546374410390854,
+          "custom": 0.15468084812164307,
+          "absolute_error": 4.340708255767822e-05,
+          "tolerance": 3.5463745007291436e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "B",
+          "reference": 0.12754033505916595,
+          "custom": 0.12757614254951477,
+          "absolute_error": 3.580749034881592e-05,
+          "tolerance": 3.2754032872617245e-05
+        }
+      ]
+    },
+    "const": {
+      "max_abs": 6.943941116333008e-05,
+      "violating_channel_values": 14,
+      "violating_pixels": 7,
+      "values": [
+        {
+          "x": 304,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.2695089876651764,
+          "custom": 0.26956087350845337,
+          "absolute_error": 5.188584327697754e-05,
+          "tolerance": 4.6950895921327174e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.26775363087654114,
+          "custom": 0.26782307028770447,
+          "absolute_error": 6.943941116333008e-05,
+          "tolerance": 4.6775363443885e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.23954448103904724,
+          "custom": 0.23961098492145538,
+          "absolute_error": 6.650388240814209e-05,
+          "tolerance": 4.395444557303563e-05
+        },
+        {
+          "x": 305,
+          "y": 445,
+          "channel": "R",
+          "reference": 0.21146711707115173,
+          "custom": 0.2115119993686676,
+          "absolute_error": 4.488229751586914e-05,
+          "tolerance": 4.114671173738316e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "R",
+          "reference": 0.2047518938779831,
+          "custom": 0.20480768382549286,
+          "absolute_error": 5.5789947509765625e-05,
+          "tolerance": 4.047518814331852e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.23521946370601654,
+          "custom": 0.23528456687927246,
+          "absolute_error": 6.510317325592041e-05,
+          "tolerance": 4.352194446255453e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.21060794591903687,
+          "custom": 0.21067330241203308,
+          "absolute_error": 6.535649299621582e-05,
+          "tolerance": 4.106079359189607e-05
+        },
+        {
+          "x": 307,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.15481036901474,
+          "custom": 0.15484659373760223,
+          "absolute_error": 3.622472286224365e-05,
+          "tolerance": 3.548103632056154e-05
+        },
+        {
+          "x": 305,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.16998784244060516,
+          "custom": 0.17003609240055084,
+          "absolute_error": 4.824995994567871e-05,
+          "tolerance": 3.699878288898617e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.17276126146316528,
+          "custom": 0.17281712591648102,
+          "absolute_error": 5.586445331573486e-05,
+          "tolerance": 3.7276127841323614e-05
+        },
+        {
+          "x": 307,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.14859510958194733,
+          "custom": 0.1486300528049469,
+          "absolute_error": 3.4943222999572754e-05,
+          "tolerance": 3.4859509469242766e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "B",
+          "reference": 0.1725662648677826,
+          "custom": 0.17261026799678802,
+          "absolute_error": 4.400312900543213e-05,
+          "tolerance": 3.7256624636938795e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "B",
+          "reference": 0.1546374410390854,
+          "custom": 0.15468084812164307,
+          "absolute_error": 4.340708255767822e-05,
+          "tolerance": 3.5463745007291436e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "B",
+          "reference": 0.12754033505916595,
+          "custom": 0.12757614254951477,
+          "absolute_error": 3.580749034881592e-05,
+          "tolerance": 3.2754032872617245e-05
+        }
+      ]
+    },
+    "gridstride": {
+      "max_abs": 6.943941116333008e-05,
+      "violating_channel_values": 14,
+      "violating_pixels": 7,
+      "values": [
+        {
+          "x": 304,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.2695089876651764,
+          "custom": 0.26956087350845337,
+          "absolute_error": 5.188584327697754e-05,
+          "tolerance": 4.6950895921327174e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.26775363087654114,
+          "custom": 0.26782307028770447,
+          "absolute_error": 6.943941116333008e-05,
+          "tolerance": 4.6775363443885e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "R",
+          "reference": 0.23954448103904724,
+          "custom": 0.23961098492145538,
+          "absolute_error": 6.650388240814209e-05,
+          "tolerance": 4.395444557303563e-05
+        },
+        {
+          "x": 305,
+          "y": 445,
+          "channel": "R",
+          "reference": 0.21146711707115173,
+          "custom": 0.2115119993686676,
+          "absolute_error": 4.488229751586914e-05,
+          "tolerance": 4.114671173738316e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "R",
+          "reference": 0.2047518938779831,
+          "custom": 0.20480768382549286,
+          "absolute_error": 5.5789947509765625e-05,
+          "tolerance": 4.047518814331852e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.23521946370601654,
+          "custom": 0.23528456687927246,
+          "absolute_error": 6.510317325592041e-05,
+          "tolerance": 4.352194446255453e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.21060794591903687,
+          "custom": 0.21067330241203308,
+          "absolute_error": 6.535649299621582e-05,
+          "tolerance": 4.106079359189607e-05
+        },
+        {
+          "x": 307,
+          "y": 444,
+          "channel": "G",
+          "reference": 0.15481036901474,
+          "custom": 0.15484659373760223,
+          "absolute_error": 3.622472286224365e-05,
+          "tolerance": 3.548103632056154e-05
+        },
+        {
+          "x": 305,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.16998784244060516,
+          "custom": 0.17003609240055084,
+          "absolute_error": 4.824995994567871e-05,
+          "tolerance": 3.699878288898617e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.17276126146316528,
+          "custom": 0.17281712591648102,
+          "absolute_error": 5.586445331573486e-05,
+          "tolerance": 3.7276127841323614e-05
+        },
+        {
+          "x": 307,
+          "y": 445,
+          "channel": "G",
+          "reference": 0.14859510958194733,
+          "custom": 0.1486300528049469,
+          "absolute_error": 3.4943222999572754e-05,
+          "tolerance": 3.4859509469242766e-05
+        },
+        {
+          "x": 305,
+          "y": 444,
+          "channel": "B",
+          "reference": 0.1725662648677826,
+          "custom": 0.17261026799678802,
+          "absolute_error": 4.400312900543213e-05,
+          "tolerance": 3.7256624636938795e-05
+        },
+        {
+          "x": 306,
+          "y": 444,
+          "channel": "B",
+          "reference": 0.1546374410390854,
+          "custom": 0.15468084812164307,
+          "absolute_error": 4.340708255767822e-05,
+          "tolerance": 3.5463745007291436e-05
+        },
+        {
+          "x": 306,
+          "y": 445,
+          "channel": "B",
+          "reference": 0.12754033505916595,
+          "custom": 0.12757614254951477,
+          "absolute_error": 3.580749034881592e-05,
+          "tolerance": 3.2754032872617245e-05
+        }
+      ]
+    },
+    "tiled": {
+      "max_abs": 2.980232238769531e-07,
+      "violating_channel_values": 0,
+      "violating_pixels": 0,
+      "values": []
+    },
+    "im2col": {
+      "max_abs": 2.980232238769531e-07,
+      "violating_channel_values": 0,
+      "violating_pixels": 0,
+      "values": []
+    },
+    "im2col_reg": {
+      "max_abs": 2.980232238769531e-07,
+      "violating_channel_values": 0,
+      "violating_pixels": 0,
+      "values": []
+    },
+    "implicit": {
+      "max_abs": 2.980232238769531e-07,
+      "violating_channel_values": 0,
+      "violating_pixels": 0,
+      "values": []
+    }
+  }
+}

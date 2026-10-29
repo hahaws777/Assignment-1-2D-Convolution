@@ -1,0 +1,597 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "sm_count": 70,
+  "torch": "2.11.0+cu130",
+  "reps": 15,
+  "rows": [
+    {
+      "requested_sms": 8,
+      "actual_sms": 8,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.14056960344314576,
+            "naive": 0.9171615600585937,
+            "tiled": 0.7455296039581298,
+            "im2col": 0.532102394104004,
+            "im2col_reg": 0.3450752019882202,
+            "implicit": 0.1272320032119751,
+            "gridstride": 1.0000959634780884
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 2.444511890411377,
+            "naive": 14.98083209991455,
+            "tiled": 12.309887886047363,
+            "im2col": 8.726847648620605,
+            "im2col_reg": 5.83625602722168,
+            "implicit": 1.9748799800872803,
+            "gridstride": 18.36092758178711
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          256,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.15922880172729492,
+          "naive": 1.0290240049362183,
+          "tiled": 0.8722592353820801,
+          "im2col": 0.6100895881652832,
+          "im2col_reg": 0.3936192035675049,
+          "implicit": 0.1434623956680298,
+          "gridstride": 1.0726720094680786
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    },
+    {
+      "requested_sms": 16,
+      "actual_sms": 16,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.07600640058517456,
+            "naive": 0.4539487838745117,
+            "tiled": 0.37979199886322024,
+            "im2col": 0.27131199836730957,
+            "im2col_reg": 0.18050240278244017,
+            "implicit": 0.0686784029006958,
+            "gridstride": 0.5177120208740235
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 1.2662080526351929,
+            "naive": 7.527040004730225,
+            "tiled": 5.971007823944092,
+            "im2col": 4.2611517906188965,
+            "im2col_reg": 2.873823881149292,
+            "implicit": 1.0188960075378417,
+            "gridstride": 9.647040367126465
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          512,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.1619328022003174,
+          "naive": 1.0344959497451782,
+          "tiled": 0.8846943855285645,
+          "im2col": 0.6119840145111084,
+          "im2col_reg": 0.3957184076309204,
+          "implicit": 0.14650559425354004,
+          "gridstride": 1.1698880195617676
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    },
+    {
+      "requested_sms": 24,
+      "actual_sms": 24,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.05370879769325256,
+            "naive": 0.30675199031829836,
+            "tiled": 0.2529119968414307,
+            "im2col": 0.182806396484375,
+            "im2col_reg": 0.12329920530319213,
+            "implicit": 0.04971520006656647,
+            "gridstride": 0.35167360305786133
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 0.8769375801086425,
+            "naive": 4.89631986618042,
+            "tiled": 3.9692800045013428,
+            "im2col": 2.8475520610809326,
+            "im2col_reg": 1.9690560102462769,
+            "implicit": 0.6804736137390137,
+            "gridstride": 6.4200639724731445
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          768,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.1654752016067505,
+          "naive": 1.0410239696502686,
+          "tiled": 0.8763903617858887,
+          "im2col": 0.629315185546875,
+          "im2col_reg": 0.3983007907867432,
+          "implicit": 0.14761279821395873,
+          "gridstride": 1.1970560550689697
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    },
+    {
+      "requested_sms": 32,
+      "actual_sms": 32,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.0429280012845993,
+            "naive": 0.2294015884399414,
+            "tiled": 0.19306559562683107,
+            "im2col": 0.13960319757461548,
+            "im2col_reg": 0.09699519872665405,
+            "implicit": 0.039375999569892885,
+            "gridstride": 0.2689759969711304
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 0.6562816143035889,
+            "naive": 3.6462719440460205,
+            "tiled": 2.970752000808716,
+            "im2col": 2.144416093826294,
+            "im2col_reg": 1.4932479858398438,
+            "implicit": 0.5146783828735352,
+            "gridstride": 4.922944068908691
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          1024,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.16251519918441773,
+          "naive": 1.040544033050537,
+          "tiled": 0.8550848007202149,
+          "im2col": 0.6147871971130371,
+          "im2col_reg": 0.41241278648376467,
+          "implicit": 0.1476704001426697,
+          "gridstride": 1.2185280323028564
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    },
+    {
+      "requested_sms": 48,
+      "actual_sms": 48,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.035795199871063235,
+            "naive": 0.15518079996109008,
+            "tiled": 0.1300927996635437,
+            "im2col": 0.09472320079803467,
+            "im2col_reg": 0.07195839881896973,
+            "implicit": 0.031350401043891904,
+            "gridstride": 0.18477439880371094
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 0.5760159969329834,
+            "naive": 2.4504001140594482,
+            "tiled": 1.9892480373382568,
+            "im2col": 1.4363839626312256,
+            "im2col_reg": 1.0416640043258667,
+            "implicit": 0.35878400802612304,
+            "gridstride": 3.276063919067383
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          1536,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.20526399612426757,
+          "naive": 1.048192024230957,
+          "tiled": 0.891055965423584,
+          "im2col": 0.6326176166534424,
+          "im2col_reg": 0.44720959663391113,
+          "implicit": 0.16456639766693115,
+          "gridstride": 1.2497600317001343
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    },
+    {
+      "requested_sms": 64,
+      "actual_sms": 64,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.03158400058746338,
+            "naive": 0.11749440431594849,
+            "tiled": 0.10099519491195678,
+            "im2col": 0.07409279942512512,
+            "im2col_reg": 0.059849601984024045,
+            "implicit": 0.029158401489257812,
+            "gridstride": 0.1564895987510681
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 0.5300896167755127,
+            "naive": 1.8254719972610474,
+            "tiled": 1.4988800287246704,
+            "im2col": 1.0924160480499268,
+            "im2col_reg": 0.8222335815429688,
+            "implicit": 0.3003871917724609,
+            "gridstride": 2.8594560623168945
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          2048,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.268176007270813,
+          "naive": 1.0446079969406128,
+          "tiled": 0.8798527717590332,
+          "im2col": 0.6368800163269043,
+          "im2col_reg": 0.46894078254699706,
+          "implicit": 0.17793279886245728,
+          "gridstride": 1.3718719482421875
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    },
+    {
+      "requested_sms": 70,
+      "actual_sms": 70,
+      "strong": [
+        {
+          "shape": [
+            1,
+            4,
+            224,
+            224
+          ],
+          "ms": {
+            "cudnn": 0.031231999397277832,
+            "naive": 0.10885119438171387,
+            "tiled": 0.09283199906349182,
+            "im2col": 0.06846399903297425,
+            "im2col_reg": 0.058032000064849855,
+            "implicit": 0.0292959988117218,
+            "gridstride": 0.1251744031906128
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        },
+        {
+          "shape": [
+            1,
+            4,
+            896,
+            896
+          ],
+          "ms": {
+            "cudnn": 0.5427775859832764,
+            "naive": 1.6755520105361938,
+            "tiled": 1.3733760118484497,
+            "im2col": 1.002560019493103,
+            "im2col_reg": 0.7532544136047363,
+            "implicit": 0.2960063934326172,
+            "gridstride": 2.2438719272613525
+          },
+          "passed": {
+            "cudnn": true,
+            "naive": true,
+            "tiled": true,
+            "im2col": true,
+            "im2col_reg": true,
+            "implicit": true,
+            "gridstride": true
+          }
+        }
+      ],
+      "weak": {
+        "shape": [
+          1,
+          4,
+          2240,
+          224
+        ],
+        "ms": {
+          "cudnn": 0.3065664052963257,
+          "naive": 1.0458879470825195,
+          "tiled": 0.8942496299743652,
+          "im2col": 0.644655990600586,
+          "im2col_reg": 0.4806079864501953,
+          "implicit": 0.19207040071487427,
+          "gridstride": 1.2282240390777588
+        },
+        "passed": {
+          "cudnn": true,
+          "naive": true,
+          "tiled": true,
+          "im2col": true,
+          "im2col_reg": true,
+          "implicit": true,
+          "gridstride": true
+        }
+      }
+    }
+  ],
+  "note": "requests of 1, 2, 4 SMs measured 8 and were dropped"
+}

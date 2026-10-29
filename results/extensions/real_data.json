@@ -1,0 +1,191 @@
+{
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "sm_count": 70,
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 91900,
+    "cudnn_benchmark": true,
+    "tf32": false
+  },
+  "dataset": "Zurich RAW-to-RGB test split",
+  "test_ids": [
+    0,
+    199
+  ],
+  "layers": [
+    {
+      "layer": "conv_l1_d1.conv_3a.conv2d",
+      "input_shape": [
+        1,
+        4,
+        226,
+        226
+      ],
+      "out_channels": 32,
+      "images": 50,
+      "methods": {
+        "cudnn": {
+          "max_abs_err_vs_fp64": 2.682209014892578e-07,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.048127999529242516,
+          "graph_ms": 0.026549600064754486,
+          "event_speedup_vs_cudnn": 1.0,
+          "graph_speedup_vs_cudnn": 1.0
+        },
+        "tiled": {
+          "max_abs_err_vs_fp64": 2.682209014892578e-07,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.09548799693584442,
+          "graph_ms": 0.08931759893894195,
+          "event_speedup_vs_cudnn": 0.5040214589649242,
+          "graph_speedup_vs_cudnn": 0.29724937056250195
+        },
+        "implicit": {
+          "max_abs_err_vs_fp64": 2.682209014892578e-07,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.05663999915122986,
+          "graph_ms": 0.050437599420547485,
+          "event_speedup_vs_cudnn": 0.8497175185462107,
+          "graph_speedup_vs_cudnn": 0.5263850851303323
+        },
+        "implicit_auto": {
+          "max_abs_err_vs_fp64": 2.682209014892578e-07,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.03323199972510338,
+          "graph_ms": 0.026754400134086607,
+          "event_speedup_vs_cudnn": 1.448242655493486,
+          "graph_speedup_vs_cudnn": 0.9923451817904452
+        },
+        "tiled_mk16": {
+          "max_abs_err_vs_fp64": 2.682209014892578e-07,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.03412799909710884,
+          "graph_ms": 0.027925600111484525,
+          "event_speedup_vs_cudnn": 1.410220370444152,
+          "graph_speedup_vs_cudnn": 0.9507262138956093
+        }
+      }
+    },
+    {
+      "layer": "conv_l0_d1.conv2d",
+      "input_shape": [
+        1,
+        16,
+        450,
+        450
+      ],
+      "out_channels": 3,
+      "images": 50,
+      "methods": {
+        "cudnn": {
+          "max_abs_err_vs_fp64": 6.67572021484375e-06,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.13473600149154663,
+          "graph_ms": 0.10963039994239807,
+          "event_speedup_vs_cudnn": 1.0,
+          "graph_speedup_vs_cudnn": 1.0
+        },
+        "tiled": {
+          "max_abs_err_vs_fp64": 6.67572021484375e-06,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.13551999628543854,
+          "graph_ms": 0.13650720119476317,
+          "event_speedup_vs_cudnn": 0.9942149142902822,
+          "graph_speedup_vs_cudnn": 0.8031107442162093
+        },
+        "implicit": {
+          "max_abs_err_vs_fp64": 6.67572021484375e-06,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.2765920013189316,
+          "graph_ms": 0.30857760906219484,
+          "event_speedup_vs_cudnn": 0.48712905958616565,
+          "graph_speedup_vs_cudnn": 0.3552765875514373
+        },
+        "implicit_auto": {
+          "max_abs_err_vs_fp64": 6.67572021484375e-06,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.11033599823713303,
+          "graph_ms": 0.10798640251159668,
+          "event_speedup_vs_cudnn": 1.221142724444051,
+          "graph_speedup_vs_cudnn": 1.0152241151901031
+        },
+        "tiled_mk4": {
+          "max_abs_err_vs_fp64": 6.67572021484375e-06,
+          "within_tolerance": 50,
+          "bitwise_equal_to_cudnn": 50,
+          "event_ms": 0.07841600105166435,
+          "graph_ms": 0.07590160071849823,
+          "event_speedup_vs_cudnn": 1.7182207672484582,
+          "graph_speedup_vs_cudnn": 1.44437533470463
+        }
+      }
+    }
+  ],
+  "network": {
+    "images": 200,
+    "methods": {
+      "cudnn": {
+        "mean_quality": {
+          "psnr_db": 20.84319835872996,
+          "ssim": 0.7175723578035832,
+          "mae": 0.07362561075948179,
+          "rmse": 0.09798517589457333,
+          "delta_e_2000": 7.5272027564048765
+        },
+        "max_abs_diff_vs_cudnn": 0.0,
+        "within_tolerance": 200,
+        "event_ms": 63.82071876525879,
+        "graph_ms": 59.78779220581055
+      },
+      "implicit": {
+        "mean_quality": {
+          "psnr_db": 20.84319835872996,
+          "ssim": 0.7175723578035832,
+          "mae": 0.07362561075948179,
+          "rmse": 0.09798517589457333,
+          "delta_e_2000": 7.5272027564048765
+        },
+        "max_abs_diff_vs_cudnn": 0.0,
+        "within_tolerance": 200,
+        "event_ms": 63.9496955871582,
+        "graph_ms": 59.48904037475586
+      },
+      "implicit_auto": {
+        "mean_quality": {
+          "psnr_db": 20.84319835872996,
+          "ssim": 0.7175723578035832,
+          "mae": 0.07362561075948179,
+          "rmse": 0.09798517589457333,
+          "delta_e_2000": 7.5272027564048765
+        },
+        "max_abs_diff_vs_cudnn": 0.0,
+        "within_tolerance": 200,
+        "event_ms": 63.666481018066406,
+        "graph_ms": 59.70547294616699
+      },
+      "tiled_mk": {
+        "mean_quality": {
+          "psnr_db": 20.84319835872996,
+          "ssim": 0.7175723578035832,
+          "mae": 0.07362561075948179,
+          "rmse": 0.09798517589457333,
+          "delta_e_2000": 7.5272027564048765
+        },
+        "max_abs_diff_vs_cudnn": 0.0,
+        "within_tolerance": 200,
+        "event_ms": 63.69001579284668,
+        "graph_ms": 59.54612922668457
+      }
+    }
+  }
+}

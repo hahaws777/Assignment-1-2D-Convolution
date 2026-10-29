@@ -1,0 +1,564 @@
+{
+  "settings": {
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "sm_count": 70,
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 91900,
+    "cudnn_benchmark": true,
+    "tf32": false,
+    "cudnn_enabled": true,
+    "cudnn_deterministic": false,
+    "matmul_tf32": false,
+    "float32_matmul_precision": "highest",
+    "inference_mode": true
+  },
+  "cudnn_kernels": [
+    "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+    "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)",
+    "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)",
+    "void implicit_convolve_sgemm<float, float, 512, 6, 8, 3, 3, 5, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+  ],
+  "workloads": [
+    {
+      "workload": "1x4x64x64 K32 3x3",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.030271999537944794,
+          "graph_ms": 0.0055344000458717344,
+          "kernel_ms": 0.005057599999999956,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.01996800024062395,
+          "graph_ms": 0.004384799860417843,
+          "kernel_ms": 0.003646299999999974,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.014511999674141407,
+          "graph_ms": 0.006708799675107002,
+          "kernel_ms": 0.006082000000000017,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.014447999652475119,
+          "graph_ms": 0.006683200225234031,
+          "kernel_ms": 0.006021300000000042,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.01398400031030178,
+          "graph_ms": 0.006849600002169609,
+          "kernel_ms": 0.006100999999999976,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.01583999954164028,
+          "graph_ms": 0.009221599996089937,
+          "kernel_ms": 0.008503800000000046,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "1x4x224x224 K32 3x3",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.07764800265431404,
+          "graph_ms": 0.02724800109863281,
+          "kernel_ms": 0.025497399999999993,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.052431998774409294,
+          "graph_ms": 0.021559200435876846,
+          "kernel_ms": 0.0197155,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.06265600025653839,
+          "graph_ms": 0.05104480087757111,
+          "kernel_ms": 0.0480437,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.039055999368429184,
+          "graph_ms": 0.027377599477767946,
+          "kernel_ms": 0.025262700000000006,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_reg<32, 64, 8, 4, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.047968000173568726,
+          "graph_ms": 0.036162398755550385,
+          "kernel_ms": 0.07790750000000002,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.0403360016644001,
+          "graph_ms": 0.027971999347209932,
+          "kernel_ms": 0.025812499999999964,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "1x16x448x448 K3 3x3",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.16524799913167953,
+          "graph_ms": 0.1174839973449707,
+          "kernel_ms": 0.10880930000000001,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.16627199947834015,
+          "graph_ms": 0.11498559713363647,
+          "kernel_ms": 0.10510230000000001,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.3051520138978958,
+          "graph_ms": 0.2983351945877075,
+          "kernel_ms": 0.2570513999999998,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.13752000033855438,
+          "graph_ms": 0.10719119906425476,
+          "kernel_ms": 0.09743489999999998,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_reg<4, 256, 8, 1, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.08707199990749359,
+          "graph_ms": 0.07189199924468995,
+          "kernel_ms": 0.0667227,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.20160000026226044,
+          "graph_ms": 0.19418320059776306,
+          "kernel_ms": 0.17519679999999999,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "1x16x32x32 K32 3x3",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.08828800171613693,
+          "graph_ms": 0.008339999988675118,
+          "kernel_ms": 0.007121599999999921,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.054816000163555145,
+          "graph_ms": 0.007128800079226494,
+          "kernel_ms": 0.0065260999999999965,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.039712000638246536,
+          "graph_ms": 0.007570400089025498,
+          "kernel_ms": 0.006839800000000014,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.037247998639941216,
+          "graph_ms": 0.007635200023651123,
+          "kernel_ms": 0.006598500000000013,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.037807999178767204,
+          "graph_ms": 0.019893600046634673,
+          "kernel_ms": 0.0178105,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.04312000051140785,
+          "graph_ms": 0.03084799945354462,
+          "kernel_ms": 0.028060500000000026,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "1x16x32x32 K32 5x5",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.11956799775362015,
+          "graph_ms": 0.020347200334072113,
+          "kernel_ms": 0.019388199999999984,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.07449600100517273,
+          "graph_ms": 0.01920720040798187,
+          "kernel_ms": 0.01752510000000003,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.0607680007815361,
+          "graph_ms": 0.01771200001239777,
+          "kernel_ms": 0.01604029999999998,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.06308799982070923,
+          "graph_ms": 0.017719200253486632,
+          "kernel_ms": 0.016009799999999963,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.0581279993057251,
+          "graph_ms": 0.02904559969902039,
+          "kernel_ms": 0.027347099999999954,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.08612800016999245,
+          "graph_ms": 0.06179839968681335,
+          "kernel_ms": 0.05687159999999985,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "1x16x32x32 K32 7x7",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.08751999959349632,
+          "graph_ms": 0.03516159951686859,
+          "kernel_ms": 0.03198590000000004,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.07392000034451485,
+          "graph_ms": 0.03384240120649338,
+          "kernel_ms": 0.03258849999999988,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.04920000024139881,
+          "graph_ms": 0.032630398869514465,
+          "kernel_ms": 0.030609,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.048048000782728195,
+          "graph_ms": 0.03265759944915771,
+          "kernel_ms": 0.030262700000000087,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.052352000027894974,
+          "graph_ms": 0.0399712011218071,
+          "kernel_ms": 0.036934600000000005,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.11423999816179276,
+          "graph_ms": 0.10377200245857239,
+          "kernel_ms": 0.09665089999999998,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "1x16x32x32 K32 9x9",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.08222400024533272,
+          "graph_ms": 0.04732480049133301,
+          "kernel_ms": 0.047450600000000044,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.07660799846053123,
+          "graph_ms": 0.04612560123205185,
+          "kernel_ms": 0.04294689999999998,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 1024, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.06531199812889099,
+          "graph_ms": 0.05248319804668426,
+          "kernel_ms": 0.04898090000000001,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.06376000121235847,
+          "graph_ms": 0.052560800313949586,
+          "kernel_ms": 0.04897350000000002,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.06801600009202957,
+          "graph_ms": 0.058243200182914734,
+          "kernel_ms": 0.055074799999999965,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.16995200514793396,
+          "graph_ms": 0.1626688003540039,
+          "kernel_ms": 0.15088419999999997,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "2x4x64x64 K32 3x3",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.04827199876308441,
+          "graph_ms": 0.011337599903345107,
+          "kernel_ms": 0.01059700000000006,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 512, 6, 8, 3, 3, 5, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.04334400035440922,
+          "graph_ms": 0.009974399954080582,
+          "kernel_ms": 0.008506899999999996,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 512, 6, 8, 3, 3, 5, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.03545599989593029,
+          "graph_ms": 0.010624799877405167,
+          "kernel_ms": 0.009732299999999963,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.032944001257419586,
+          "graph_ms": 0.008935999870300294,
+          "kernel_ms": 0.00786650000000003,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_reg<32, 64, 8, 4, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.03038400039076805,
+          "graph_ms": 0.009036799892783165,
+          "kernel_ms": 0.007916199999999991,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.030671999789774418,
+          "graph_ms": 0.009271999821066856,
+          "kernel_ms": 0.00828589999999998,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    },
+    {
+      "workload": "4x4x64x64 K32 3x3",
+      "methods": {
+        "cudnn": {
+          "event_ms": 0.05027199909090996,
+          "graph_ms": 0.011500799655914306,
+          "kernel_ms": 0.010419499999999995,
+          "kernels_per_call": 2.0,
+          "kernel_names": [
+            "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<float> const&)::{lambda(int)#1})",
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "cudnn_nobias": {
+          "event_ms": 0.04193600080907345,
+          "graph_ms": 0.008731999993324281,
+          "kernel_ms": 0.007891999999999996,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void implicit_convolve_sgemm<float, float, 128, 5, 5, 3, 3, 3, 1, false, false, true>(int, int, int, float const*, int, float*, float const*, kernel_conv_params, unsigned long long, int, float, float, int, float const*, float const*, bool, bool, int, int)"
+          ]
+        },
+        "implicit": {
+          "event_ms": 0.0330400001257658,
+          "graph_ms": 0.01844480037689209,
+          "kernel_ms": 0.016931400000000006,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_gemm<16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "implicit_auto": {
+          "event_ms": 0.024575999937951565,
+          "graph_ms": 0.01202080026268959,
+          "kernel_ms": 0.010896899999999982,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_implicit_reg<32, 64, 8, 4, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk4": {
+          "event_ms": 0.028320000506937504,
+          "graph_ms": 0.014951999485492706,
+          "kernel_ms": 0.013876699999999981,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 4>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        },
+        "tiled_mk16": {
+          "event_ms": 0.02355199959129095,
+          "graph_ms": 0.0116567999124527,
+          "kernel_ms": 0.01056160000000001,
+          "kernels_per_call": 1.0,
+          "kernel_names": [
+            "void conv2d_tiled_mk<16, 16>(ConvDims, float const*, float const*, float const*, float*)"
+          ]
+        }
+      }
+    }
+  ]
+}
